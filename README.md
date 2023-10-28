@@ -41,6 +41,8 @@ The Members of Group for this project are :
 
 1. Harris Khalid (21L-5808)
 2. Javaria Shabbir (21L-6053)
+3. Azma Amir (21L-6105)
+4. Hadia Ahmad (21L-6104)
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
