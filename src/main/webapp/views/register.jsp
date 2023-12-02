@@ -26,7 +26,7 @@
 
             <div class="form-group">
                 <label for="password">Password</label>
-                < class="form-control form-control-lg" required placeholder="Password*" required name="password"
+                <input type="password" class="form-control form-control-lg" required placeholder="Password*" required name="password"
                        id="password">
             </div>
               <div class="form-group">
