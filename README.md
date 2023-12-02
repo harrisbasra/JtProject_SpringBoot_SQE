@@ -47,3 +47,42 @@ The Members of Group for this project are :
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
+## Running JUnit Tests
+
+To run JUnit tests, you can use Maven. Make sure you have Maven installed on your machine. Steps are : 
+
+1. Add Maven Surefire Plugin to POM.xml:
+    Add the Maven Surefire Plugin to your project's pom.xml file. This plugin allows you to run tests during the build process.
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version> <!-- Use the latest version -->
+                <configuration>
+                    <!-- Specify the package name or directory where your tests are located -->
+                    <includes>
+                        <include>com/example/**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+2. Run Tests via Command Line:
+  After adding the Surefire Plugin, you can run tests using the following Maven command:
+
+  mvn test
+
+  This command will execute all tests in your project.
+  
+3. If you want to run specific tests or a single test class, you can use the -Dtest parameter:
+    # Run a specific test class
+    mvn test -Dtest=registertest
+    
+    # Run specific test methods in a test class
+    mvn test -Dtest=registertest#testMethod1+testMethod2
+   
+    Adjust the class and method names accordingly.
+    
+    
