@@ -72,7 +72,7 @@ public class AdminController {
 			return "redirect:/admin/login";
 	}
 
-	@GetMapping("Dashboard")
+	@GetMapping("Dashboard2")
 	public String adminLogout(Model model){
 		if(adminlogcheck==1)
 			return "adminHome";

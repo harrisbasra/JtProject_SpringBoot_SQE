@@ -44,7 +44,7 @@ public class UserController{
 		return "register";
 	}
 
-	@GetMapping("/register")
+	@GetMapping("/signUp")
 	public String register(){
 		String returner;
 		returner = "register";
