@@ -31,7 +31,7 @@
             </div>
               <div class="form-group">
                                   <label for="email">Email address</label>
-                                  < class="form-control form-control-lg" required minlength="6" placeholder="Email*" required name="email" id="email"
+                                  <input type="email" class="form-control form-control-lg" required minlength="6" placeholder="Email*" required name="email" id="email"
                                          aria-describedby="emailHelp">
                                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with
                                       anyone else.</small>
