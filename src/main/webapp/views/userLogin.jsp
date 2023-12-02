@@ -19,6 +19,9 @@
     
         <div class="col-sm-6">
             <h2>User Login</h2>
+            <!-- Add this line to display the error message -->
+            <h3 style="color:red;" th:text="${message}"></h3>
+
             <form action="userloginvalidate" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
