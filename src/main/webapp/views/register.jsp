@@ -21,20 +21,21 @@
         <form action="newuserregister" method="post">
             <div class="form-group">
                 <label for="firstName">User Name</label>
-                <input type="text" name="username" id="firstName" required placeholder="Your Username*" required class="form-control form-control-lg">
+                < name="username" id="firstName" required placeholder="Your Username*" required class="form-control form-control-lg">
             </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control form-control-lg" required minlength="6" placeholder="Email*" required name="email" id="email"
-                       aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                    anyone else.</small>
-            </div>
+
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control form-control-lg" required placeholder="Password*" required name="password"
+                < class="form-control form-control-lg" required placeholder="Password*" required name="password"
                        id="password">
             </div>
+              <div class="form-group">
+                                  <label for="email">Email address</label>
+                                  < class="form-control form-control-lg" required minlength="6" placeholder="Email*" required name="email" id="email"
+                                         aria-describedby="emailHelp">
+                                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                      anyone else.</small>
+                              </div>
             <div class="form-group">
                 <label for="Address">Address</label>
                 <textarea class="form-control form-control-lg" rows="3" placeholder="Enter Your Address" name="address"></textarea>
