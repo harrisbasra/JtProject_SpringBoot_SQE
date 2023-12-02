@@ -150,8 +150,6 @@ public class UserController{
 			return "test";
 		}
 		
-		// for learning purpose of model and view ( how data is pass to view)
-		
 		@GetMapping("/test2")
 		public ModelAndView Test2()
 		{
@@ -170,13 +168,5 @@ public class UserController{
 			
 			
 		}
-
-
-//	@GetMapping("carts")
-//	public ModelAndView  getCartDetail()
-//	{
-//		ModelAndView mv= new ModelAndView();
-//		List<Cart>carts = cartService.getCarts();
-//	}
 	  
 }

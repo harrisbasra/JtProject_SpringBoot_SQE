@@ -71,6 +71,16 @@ public class AdminController {
 		else
 			return "redirect:/admin/login";
 	}
+
+	@GetMapping("Dashboard")
+	public String adminLogout(Model model){
+		if(adminlogcheck==1)
+			return "adminHome";
+		else
+			return "redirect:/register";
+	}
+
+
 	@GetMapping("/loginvalidate")
 	public String adminlog(Model model) {
 		
@@ -234,7 +244,7 @@ public class AdminController {
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommjava","root","");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommjava","root","Gte1207t");
 			PreparedStatement stmt = con.prepareStatement("select * from users where username = ?"+";");
 			stmt.setString(1, usernameforclass);
 			ResultSet rst = stmt.executeQuery( );
@@ -268,7 +278,7 @@ public class AdminController {
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommjava","root","");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ecommjava","root","Gte1207t");
 			
 			PreparedStatement pst = con.prepareStatement("update users set username= ?,email = ?,password= ?, address= ? where uid = ?;");
 			pst.setString(1, username);

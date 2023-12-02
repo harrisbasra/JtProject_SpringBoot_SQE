@@ -21,7 +21,7 @@
         <form action="newuserregister" method="post">
             <div class="form-group">
                 <label for="firstName">User Name</label>
-                < name="username" id="firstName" required placeholder="Your Username*" required class="form-control form-control-lg">
+                <input type="text" name="username" id="firstName" required placeholder="Your Username*" required class="form-control form-control-lg">
             </div>
 
             <div class="form-group">
