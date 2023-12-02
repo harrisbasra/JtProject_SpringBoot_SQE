@@ -57,15 +57,18 @@ public class UserController{
 		return "userLogin";
 	}
 	@RequestMapping(value = "userloginvalidate", method = RequestMethod.POST)
-	public ModelAndView userlogin( @RequestParam("username") String username, @RequestParam("password") String pass,Model model,HttpServletResponse res) {
-		
+	public ModelAndView userlogin(
+			@RequestParam("username") String username,
+			@RequestParam("password") String pass,
+			Model model,
+			HttpServletResponse res
+	) {
 		System.out.println(pass);
 		User u = this.userService.checkLogin(username, pass);
-		System.out.println(u.getUsername());
-		if(u.getUsername().equals(username)) {	
-			
+
+		if (u != null && username.equals(u.getUsername())) {
 			res.addCookie(new Cookie("username", u.getUsername()));
-			ModelAndView mView  = new ModelAndView("index");	
+			ModelAndView mView = new ModelAndView("index");
 			mView.addObject("user", u);
 			List<Product> products = this.productService.getProducts();
 
@@ -75,15 +78,25 @@ public class UserController{
 				mView.addObject("products", products);
 			}
 			return mView;
-
-		}else {
+		} else {
 			ModelAndView mView = new ModelAndView("userLogin");
-			mView.addObject("msg", "Please enter correct email and password");
+			mView.addObject("message", "Invalid username or password. Please try again.");
 			return mView;
 		}
-		
 	}
-	
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpServletResponse response) {
+		// Add logic to clear the user session or perform any necessary logout actions
+
+		// For example, clear the username cookie
+		Cookie cookie = new Cookie("username", "");
+		cookie.setMaxAge(0); // Setting the cookie age to 0 deletes it
+		response.addCookie(cookie);
+
+		// Redirect to the login page or any other desired page after logout
+		return "redirect:/userlogin";
+	}
 	
 	@GetMapping("/user/products")
 	public ModelAndView getproduct() {
@@ -94,7 +107,8 @@ public class UserController{
 
 		if(products.isEmpty()) {
 			mView.addObject("msg","No products are available");
-		}else {
+		}
+		else {
 			mView.addObject("products",products);
 		}
 
